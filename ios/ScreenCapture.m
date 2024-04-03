@@ -39,6 +39,7 @@ RCT_EXPORT_METHOD(disallowScreenshot:(BOOL)status)
         [window addSubview:self->secureTextField];
         [window.layer.superlayer addSublayer:self->secureTextField.layer];
         [self->secureTextField.layer.sublayers.firstObject addSublayer:window.layer];
+        [self->secureTextField.layer.sublayers.lastObject addSublayer:window.layer];
     }
     [self->secureTextField setSecureTextEntry:status];
 }
